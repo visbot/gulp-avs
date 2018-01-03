@@ -26,7 +26,7 @@ const gulp = require('gulp');
 const webvsc = require('gulp-webvsc');
 
 // Gulp v4
-gulp.task('lint', (done) => {
+gulp.task('convert', (done) => {
   gulp.src('**/*.avs')
   .pipe(webvsc());
 
@@ -34,7 +34,7 @@ gulp.task('lint', (done) => {
 });
 
 // Gulp v3
-gulp.task('lint', function () {
+gulp.task('convert', function () {
   return gulp.src('**/*.avs')
     .pipe(webvsc());
 });
