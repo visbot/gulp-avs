@@ -31,16 +31,18 @@ const webvsc = require('gulp-webvsc');
 
 // Gulp v4
 gulp.task('convert', (done) => {
-  gulp.src('**/*.avs')
-  .pipe(webvsc());
+  gulp.src('input/**/*.avs')
+  .pipe(webvsc())
+  .pipe(gulp.dest('output'));
 
   done();
 });
 
 // Gulp v3
 gulp.task('convert', function () {
-  return gulp.src('**/*.avs')
-    .pipe(webvsc());
+  return gulp.src('input/**/*.avs')
+    .pipe(webvsc())
+    .pipe(gulp.dest('output'));
 });
 ```
 
