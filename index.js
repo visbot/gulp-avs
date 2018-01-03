@@ -20,7 +20,7 @@ module.exports = function(options) {
 
     return through.obj(function(file, encoding, callback) {
         let presetName = basename(file.path, extname(file.path));
-        let presetDate = statSync(file).mtime.toISOString();
+        let presetDate = statSync(file.path).mtime.toISOString();
 
         if (file.isNull()) {
             this.push(file);
