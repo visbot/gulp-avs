@@ -8,7 +8,7 @@ const { basename, extname } = require('path')
 const { convertPreset } = require('@visbot/webvsc');
 const PluginError = require('plugin-error');
 const replaceExt = require('replace-ext');
-const { statSync } = require('fs')
+const { statSync } = require('fs');
 const through = require('through2');
 
 module.exports = function(options) {
