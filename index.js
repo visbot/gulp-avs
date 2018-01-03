@@ -32,7 +32,7 @@ module.exports = function(options) {
 
         let presetName = basename(file.path, extname(file.path));
         let presetDate = statSync(file.path).mtime.toISOString();
-        let whitespace = (options.minify === true) ? '' : '  ';
+        let whitespace = (options.minify === true) ? 0 : 2;
 
         try {
             let preset = JSON.stringify(convertPreset(file.contents, presetName, presetDate, options), null, whitespace);
