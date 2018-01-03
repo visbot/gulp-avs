@@ -25,6 +25,8 @@ $ yarn add gulp-webvsc
 
 **Example:**
 
+Standard usage
+
 ```js
 const gulp = require('gulp');
 const webvsc = require('gulp-webvsc');
@@ -39,10 +41,29 @@ gulp.task('convert', (done) => {
 });
 
 // Gulp v3
-gulp.task('convert', function () {
+gulp.task('convert', function() {
   return gulp.src('input/**/*.avs')
     .pipe(webvsc())
     .pipe(gulp.dest('output'));
+});
+```
+
+**Example:**
+
+Minify JSON and rename output files
+
+```js
+const gulp = require('gulp');
+const rename = require('gulp-rename');
+const webvsc = require('gulp-webvsc');
+
+gulp.task('convert', (done) => {
+  gulp.src('input/**/*.avs')
+  .pipe(webvsc({ minify: true }))
+  .pipe(rename({ suffix: '.min' }))
+  .pipe(gulp.dest('output'));
+
+  done();
 });
 ```
 
