@@ -21,6 +21,10 @@ $ yarn add gulp-webvsc
 
 ## Usage
 
+`webvsc([options])`
+
+**Example:**
+
 ```js
 const gulp = require('gulp');
 const webvsc = require('gulp-webvsc');
