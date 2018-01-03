@@ -19,8 +19,6 @@ module.exports = function(options) {
     }, options);
 
     return through.obj(function(file, encoding, callback) {
-        let presetName = basename(file.path, extname(file.path));
-        let presetDate = statSync(file.path).mtime.toISOString();
 
         if (file.isNull()) {
             this.push(file);
@@ -32,6 +30,8 @@ module.exports = function(options) {
             return callback();
         }
 
+        let presetName = basename(file.path, extname(file.path));
+        let presetDate = statSync(file.path).mtime.toISOString();
         let whitespace = (options.minify === true) ? '' : '  ';
 
         try {
@@ -41,6 +41,7 @@ module.exports = function(options) {
             this.emit('error', new PluginError(meta.name, err));
         }
 
+        // always change file extension for output files
         file.path = replaceExt(file.path, '.webvs');
 
         this.push(file);
