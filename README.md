@@ -42,12 +42,30 @@ gulp.task('convert', function () {
 
 ## Options
 
+### hidden
+
+Type: `boolean`
+Default: `false`
+
+Don't extract hidden strings from fixed-size strings
+
 ### minify
 
 Type: `boolean`
 Default: `false`
 
 Minify generated JSON
+
+### verbose
+
+Type: `number`
+Default: `0`
+
+Control the amount of output displayed:
+
+* `0` Display name of operation (read/write)
+* `1` List detected components
+* `2` List component details
 
 ## License
 

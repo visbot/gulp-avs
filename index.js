@@ -8,15 +8,19 @@ const { basename, extname } = require('path')
 const { convertPreset } = require('@visbot/webvsc');
 const PluginError = require('plugin-error');
 const replaceExt = require('replace-ext');
+const { statSync } = require('fs')
 const through = require('through2');
 
 module.exports = function(options) {
     options = Object.assign({
-        minify: false
+        hidden: false,
+        minify: false,
+        verbose: 0
     }, options);
 
     return through.obj(function(file, encoding, callback) {
-        let baseName = basename(file.path, extname(file.path));
+        let presetName = basename(file.path, extname(file.path));
+        let presetDate = statSync(file).mtime.toISOString();
 
         if (file.isNull()) {
             this.push(file);
@@ -31,12 +35,13 @@ module.exports = function(options) {
         let whitespace = (options.minify === true) ? '' : '  ';
 
         try {
-            let preset = JSON.stringify(convertPreset(file.contents, baseName), null, whitespace);
+            let preset = JSON.stringify(convertPreset(file.contents, presetName, presetDate, options), null, whitespace);
             file.contents = new Buffer(preset);
-            file.path = replaceExt(file.path, '.webvs');
         } catch (err) {
             this.emit('error', new PluginError(meta.name, err));
         }
+
+        file.path = replaceExt(file.path, '.webvs');
 
         this.push(file);
         callback();
