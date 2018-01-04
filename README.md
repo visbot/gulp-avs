@@ -58,6 +58,7 @@ const gulp = require('gulp');
 const rename = require('gulp-rename');
 const webvsc = require('gulp-webvsc');
 
+// Gulp v4
 gulp.task('convert', (done) => {
   gulp.src('input/**/*.avs')
     .pipe(webvsc({ minify: true }))
