@@ -96,6 +96,12 @@ Control the amount of output displayed:
 * `1` List detected components
 * `2` List component details
 
+## Related Projects
+
+* [webvsc](https://github.com/grandchild/AVS-File-Decoder)
+* [webvsc-cli](https://github.com/idleberg/webvsc-cli)
+* [grunt-webvsc](https://github.com/idleberg/grunt-webvsc)
+
 ## License
 
 This work is licensed under [The MIT License](https://opensource.org/licenses/MIT)
