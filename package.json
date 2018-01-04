@@ -26,9 +26,13 @@
   "devDependencies": {
     "gulp": "^4.0.0",
     "gulp-debug": "^3.2.0",
-    "gulp-jshint": "^2.1.0",
-    "gulp-jsonlint": "^1.2.1",
-    "jshint": "^2.9.5"
+    "gulp-eslint": "^4.0.0",
+    "gulp-jsonlint": "^1.2.1"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6
+    }
   },
   "scripts": {
     "test": "gulp lint"

@@ -1,24 +1,22 @@
 // Dependencies
 const gulp = require('gulp');
 const debug = require('gulp-debug');
-const jshint = require('gulp-jshint');
+const eslint = require('gulp-eslint');
 const jsonlint = require('gulp-jsonlint');
 
-// Exclude node_modules
-const self = '!node_modules/**/*';
-
 // Lint JavaScript files
-gulp.task('jshint', (done) => {
-  gulp.src(['./**/*.js', self])
-  .pipe(debug({title: 'jshint:'}))
-  .pipe(jshint());
+gulp.task('eslint', (done) => {
+  gulp.src(['./*.js'])
+  .pipe(debug({title: 'eslint:'}))
+  .pipe(eslint())
+  .pipe(eslint.failAfterError());
 
   done()
 });
 
 // Lint JSON files
 gulp.task('jsonlint', (done) => {
-  gulp.src(['./**/*.json', self])
+  gulp.src(['./*.json'])
   .pipe(debug({title: 'jsonlint:'}))
   .pipe(jsonlint())
   .pipe(jsonlint.reporter());
@@ -27,6 +25,6 @@ gulp.task('jsonlint', (done) => {
 });
 
 // Tasks
-gulp.task('lint', gulp.parallel('jshint', 'jsonlint', (done) => {
+gulp.task('lint', gulp.parallel('eslint', 'jsonlint', (done) => {
   done();
 }));
