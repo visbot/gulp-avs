@@ -35,8 +35,8 @@ const webvsc = require('gulp-webvsc');
 // Gulp v4
 gulp.task('convert', (done) => {
   gulp.src('input/**/*.avs')
-  .pipe(webvsc())
-  .pipe(gulp.dest('output'));
+    .pipe(webvsc())
+    .pipe(gulp.dest('output'));
 
   done();
 });
@@ -60,9 +60,9 @@ const webvsc = require('gulp-webvsc');
 
 gulp.task('convert', (done) => {
   gulp.src('input/**/*.avs')
-  .pipe(webvsc({ minify: true }))
-  .pipe(rename({ suffix: '.min' }))
-  .pipe(gulp.dest('output'));
+    .pipe(webvsc({ minify: true }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('output'));
 
   done();
 });
