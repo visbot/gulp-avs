@@ -2,7 +2,6 @@
 
 [![npm](https://img.shields.io/npm/l/gulp-webvsc.svg?style=flat-square)](https://www.npmjs.org/package/gulp-webvsc)
 [![npm](https://img.shields.io/npm/v/gulp-webvsc.svg?style=flat-square)](https://www.npmjs.org/package/gulp-webvsc)
-[![npm](https://img.shields.io/npm/dm/gulp-webvsc.svg?style=flat-square)](https://www.npmjs.org/package/gulp-webvsc)
 [![Travis](https://img.shields.io/travis/idleberg/gulp-webvsc.svg?style=flat-square)](https://travis-ci.org/idleberg/gulp-webvsc)
 [![David](https://img.shields.io/david/idleberg/gulp-webvsc.svg?style=flat-square)](https://david-dm.org/idleberg/gulp-webvsc)
 [![David](https://img.shields.io/david/dev/idleberg/gulp-webvsc.svg?style=flat-square)](https://david-dm.org/idleberg/gulp-webvsc?type=dev)
