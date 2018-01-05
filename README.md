@@ -22,7 +22,7 @@ $ yarn add gulp-webvsc
 
 `webvsc([options])`
 
-The output file-extension will automatically be set to `.webvs`, so no need to take action
+The output file-extension will automatically be set to `.webvs`, so there's no need to pipe in additional plugins.
 
 **Example:**
 
