@@ -1,4 +1,3 @@
-*.avs
 *.webvs
 bower_components/
 node_modules/
