@@ -15,6 +15,7 @@ module.exports = function(options) {
     options = Object.assign({
         hidden: false,
         minify: false,
+        noDate : false,
         verbose: 0
     }, options);
 
@@ -31,7 +32,7 @@ module.exports = function(options) {
         }
 
         let presetName = basename(file.path, extname(file.path));
-        let presetDate = statSync(file.path).mtime.toISOString();
+        let presetDate = (options.noDate === true) ? '2000-03-03T00:00:00.000Z' : statSync(file.path).mtime.toISOString();
         let whitespace = (options.minify === true) ? 0 : 2;
 
         try {
