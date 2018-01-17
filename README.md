@@ -74,7 +74,7 @@ gulp.task('convert', (done) => {
 ### hidden
 
 Type: `boolean`  
-Default: `false`  
+Default: `true`  
 
 Don't extract hidden strings from fixed-size strings
 

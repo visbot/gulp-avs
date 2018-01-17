@@ -27,9 +27,14 @@ describe(meta.name, function() {
 
     it('convert presets', function (done) {
       gulp.src(fixtures('*'))
-        .pipe(webvsc({minify:true}))
+        .pipe(webvsc(
+          {
+            minify:true,
+            noDate: true
+          }
+        ))
         .pipe(assert.length(1))
-        .pipe(assert.first(function (d) { d.contents.toString().should.eql('{"name":"superscope","date":"2018-01-06T12:23:18.387Z","clearFrame":true,"components":[{"type":"SuperScope","group":"Render","code":{"init":"n=800","perFrame":"t=t-0.05","onBeat":"","perPoint":"d=i+v*0.2; r=t+i*$PI*4; x=cos(r)*d; y=sin(r)*d"},"audioChannel":"Center","audioSource":"Waveform","colors":["#ffffff"],"lineType":"Dots"}]}'); }))
+        .pipe(assert.first(function (d) { d.contents.toString().should.eql('{"name":"superscope","date":"2000-03-03T00:00:00.000Z","clearFrame":true,"components":[{"type":"SuperScope","group":"Render","code":{"init":"n=800","perFrame":"t=t-0.05","onBeat":"","perPoint":"d=i+v*0.2; r=t+i*$PI*4; x=cos(r)*d; y=sin(r)*d"},"audioChannel":"Center","audioSource":"Waveform","colors":["#ffffff"],"lineType":"Dots"}]}'); }))
         .pipe(assert.end(done));
     });
   });
