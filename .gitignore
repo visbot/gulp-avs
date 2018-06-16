@@ -1,6 +1,10 @@
-*.webvs
+# Package Managers
 bower_components/
 node_modules/
 npm-debug.log
-todo.md
 vendor/
+
+# Project specific
+*.webvs
+!test/**/*.webvs
+todo.md
