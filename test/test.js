@@ -3,38 +3,73 @@ const webvsc = require('../');
 
 const assert = require('stream-assert');
 const File = require('vinyl');
-const fs = require('fs');
 const gulp = require('gulp');
 const path = require('path');
 const should = require('should');
+const { readFileSync } = require('fs');
 
 require('mocha');
 
-const fixtures = function (glob) { return path.join(__dirname, 'fixtures', glob); }
+const fixtures = (glob) => { return path.join(__dirname, 'fixtures', glob); }
+const expected = (glob) => { return path.join(__dirname, 'expected', glob); }
 
-describe(meta.name, function() {
+const options = {
+  minify: true,
+  noDate: true
+};
 
-  describe('webvsc()', function() {
-
-    it('should emit error on streamed file', function (done) {
+describe(meta.name, () => {
+  describe('webvsc()', () => {
+    it('should emit error on streamed file', done => {
       gulp.src(fixtures('*'), { buffer: false })
         .pipe(webvsc())
-        .once('error', function (err) {
+        .once('error', err => {
           err.message.should.eql('Streaming not supported');
           done();
         });
     });
 
-    it('convert presets', function (done) {
-      gulp.src(fixtures('*'))
-        .pipe(webvsc(
-          {
-            minify:true,
-            noDate: true
-          }
-        ))
+    it('convert preset: comment.avs', done => {
+      let file = 'comment';
+      let webvsPreset = readFileSync(expected(`${file}.webvs`), 'utf-8');
+
+      gulp.src(fixtures(`${file}.avs`))
+        .pipe(webvsc(options))
         .pipe(assert.length(1))
-        .pipe(assert.first(function (d) { d.contents.toString().should.eql('{"name":"superscope","date":"2000-03-03T00:00:00.000Z","clearFrame":true,"components":[{"type":"SuperScope","group":"Render","code":{"init":"n=800","perFrame":"t=t-0.05","onBeat":"","perPoint":"d=i+v*0.2; r=t+i*$PI*4; x=cos(r)*d; y=sin(r)*d"},"audioChannel":"Center","audioSource":"Waveform","colors":["#ffffff"],"lineType":"Dots"}]}'); }))
+        .pipe(assert.first( d => { d.contents.toString().should.eql(webvsPreset); }))
+        .pipe(assert.end(done));
+    });
+
+    it('convert preset: empty.avs', done => {
+      let file = 'empty';
+      let webvsPreset = readFileSync(expected(`${file}.webvs`), 'utf-8');
+
+      gulp.src(fixtures(`${file}.avs`))
+        .pipe(webvsc(options))
+        .pipe(assert.length(1))
+        .pipe(assert.first( d => { d.contents.toString().should.eql(webvsPreset); }))
+        .pipe(assert.end(done));
+    });
+
+    it('convert preset: invert.avs', done => {
+      let file = 'invert';
+      let webvsPreset = readFileSync(expected(`${file}.webvs`), 'utf-8');
+
+      gulp.src(fixtures(`${file}.avs`))
+        .pipe(webvsc(options))
+        .pipe(assert.length(1))
+        .pipe(assert.first( d => { d.contents.toString().should.eql(webvsPreset); }))
+        .pipe(assert.end(done));
+    });
+
+    it('convert preset: superscope.avs', done => {
+      let file = 'superscope';
+      let webvsPreset = readFileSync(expected(`${file}.webvs`), 'utf-8');
+
+      gulp.src(fixtures(`${file}.avs`))
+        .pipe(webvsc(options))
+        .pipe(assert.length(1))
+        .pipe(assert.first( d => { d.contents.toString().should.eql(webvsPreset); }))
         .pipe(assert.end(done));
     });
   });
