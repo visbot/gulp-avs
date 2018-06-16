@@ -5,21 +5,20 @@ const meta = require('./package.json');
 
 // Dependencies
 const { basename, extname } = require('path')
-const { convertPreset } = require('@visbot/webvsc');
+const { convertFileSync } = require('@visbot/webvsc');
 const PluginError = require('plugin-error');
 const replaceExt = require('replace-ext');
 const { statSync } = require('fs');
 const through = require('through2');
 
-module.exports = function(options) {
-    options = Object.assign({
-        hidden: true,
-        minify: false,
-        noDate : false,
-        verbose: 0
-    }, options);
+const defaultOptions = {
+    hidden: true,
+    minify: true,
+    verbose: 0
+};
 
-    let whitespace = (options.minify === true) ? 0 : 2;
+module.exports = function(options) {
+    options = Object.assign(defaultOptions, options);
 
     return through.obj(function(file, encoding, callback) {
         if (file.isNull()) {
@@ -32,12 +31,9 @@ module.exports = function(options) {
             return callback();
         }
 
-        let presetName = basename(file.path, extname(file.path));
-        let presetDate = (options.noDate === true) ? '2000-03-03T00:00:00.000Z' : statSync(file.path).mtime.toISOString();
-
         try {
-            let preset = JSON.stringify(convertPreset(file.contents, presetName, presetDate, options), null, whitespace);
-            file.contents = new Buffer(preset);
+            let preset = convertFileSync(file.path, options);
+            file.contents = Buffer.from(preset);
         } catch (err) {
             this.emit('error', new PluginError(meta.name, err));
         }
