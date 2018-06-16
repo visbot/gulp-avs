@@ -12,7 +12,7 @@ Gulp 4 plugin to convert [Winamp AVS presets](https://www.wikiwand.com/en/Advanc
 
 ```sh
 # npm
-$ npm install gulp-webvsc
+$ npm install --save-dev gulp-webvsc
 
 # Yarn
 $ yarn add gulp-webvsc
