@@ -6,7 +6,7 @@
 [![David](https://img.shields.io/david/idleberg/gulp-webvsc.svg?style=flat-square)](https://david-dm.org/idleberg/gulp-webvsc)
 [![David](https://img.shields.io/david/dev/idleberg/gulp-webvsc.svg?style=flat-square)](https://david-dm.org/idleberg/gulp-webvsc?type=dev)
 
-Gulp 4 plugin to convert [Winamp AVS presets](https://www.wikiwand.com/en/Advanced_Visualization_Studio) into [Webvs](https://github.com/azeem/webvs) JSON.
+Gulp plugin to convert [Winamp AVS presets](https://www.wikiwand.com/en/Advanced_Visualization_Studio) into [Webvs](https://github.com/azeem/webvs) JSON.
 
 ## Installation
 
@@ -32,12 +32,20 @@ Standard usage
 const gulp = require('gulp');
 const webvsc = require('gulp-webvsc');
 
+// Gulp v4
 gulp.task('convert', (done) => {
   gulp.src('input/**/*.avs')
     .pipe(webvsc())
     .pipe(gulp.dest('output'));
 
   done();
+});
+
+// Gulp v3
+gulp.task('convert', function() {
+  return gulp.src('input/**/*.avs')
+    .pipe(webvsc())
+    .pipe(gulp.dest('output'));
 });
 ```
 
