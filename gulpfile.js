@@ -6,7 +6,7 @@ const jsonlint = require('gulp-jsonlint');
 
 // Lint JavaScript files
 gulp.task('eslint', (done) => {
-  gulp.src(['./*.js'])
+  gulp.src(['index.js', 'test/test.js'])
   .pipe(debug({title: 'eslint:'}))
   .pipe(eslint())
   .pipe(eslint.failAfterError());
