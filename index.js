@@ -4,12 +4,12 @@
 const meta = require('./package.json');
 
 // Dependencies
-const { basename, extname } = require('path')
-const { convertFileSync } = require('@visbot/webvsc');
 const PluginError = require('plugin-error');
 const replaceExt = require('replace-ext');
-const { statSync } = require('fs');
 const through = require('through2');
+const { basename, extname } = require('path')
+const { convertFile } = require('@visbot/webvsc');
+const { statSync } = require('fs');
 
 const defaultOptions = {
     hidden: true,
@@ -20,7 +20,7 @@ const defaultOptions = {
 module.exports = function(options) {
     options = Object.assign(defaultOptions, options);
 
-    return through.obj(function(file, encoding, callback) {
+    return through.obj(async function(file, encoding, callback) {
         if (file.isNull()) {
             this.push(file);
             return callback();
@@ -32,7 +32,7 @@ module.exports = function(options) {
         }
 
         try {
-            let preset = convertFileSync(file.path, options);
+            let preset = await convertFile(file.path, options);
             file.contents = Buffer.from(preset);
         } catch (err) {
             this.emit('error', new PluginError(meta.name, err));
