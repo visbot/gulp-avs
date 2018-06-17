@@ -18,7 +18,7 @@
     "winamp"
   ],
   "dependencies": {
-    "@visbot/webvsc": "^2.0.0",
+    "@visbot/webvsc": "^2.2.0",
     "plugin-error": "^1.0.1",
     "replace-ext": "^1.0.0",
     "through2": "^2.0.3"
