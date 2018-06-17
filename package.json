@@ -31,7 +31,8 @@
     "husky": "^0.14.3",
     "mocha": "^5.2.0",
     "should": "^13.2.1",
-    "stream-assert": "^2.0.3"
+    "stream-assert": "^2.0.3",
+    "vinyl": "^2.1.0"
   },
   "eslintConfig": {
     "parserOptions": {
