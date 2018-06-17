@@ -7,9 +7,7 @@ const meta = require('./package.json');
 const PluginError = require('plugin-error');
 const replaceExt = require('replace-ext');
 const through = require('through2');
-const { basename, extname } = require('path')
 const { convertFile } = require('@visbot/webvsc');
-const { statSync } = require('fs');
 
 const defaultOptions = {
     hidden: true,
