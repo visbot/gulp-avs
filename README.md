@@ -1,10 +1,10 @@
 # gulp-webvsc
 
-[![npm](https://img.shields.io/npm/l/gulp-webvsc.svg?style=flat-square)](https://www.npmjs.org/package/gulp-webvsc)
-[![npm](https://img.shields.io/npm/v/gulp-webvsc.svg?style=flat-square)](https://www.npmjs.org/package/gulp-webvsc)
-[![CircleCI](https://img.shields.io/circleci/project/idleberg/gulp-webvsc.svg?style=flat-square)](https://circleci.com/gh/idleberg/gulp-webvsc)
-[![David](https://img.shields.io/david/idleberg/gulp-webvsc.svg?style=flat-square)](https://david-dm.org/idleberg/gulp-webvsc)
-[![David](https://img.shields.io/david/dev/idleberg/gulp-webvsc.svg?style=flat-square)](https://david-dm.org/idleberg/gulp-webvsc?type=dev)
+[![npm](https://flat.badgen.net/npm/license/gulp-webvsc)](https://www.npmjs.org/package/gulp-webvsc)
+[![npm](https://flat.badgen.net/npm/v/gulp-webvsc)](https://www.npmjs.org/package/gulp-webvsc)
+[![CircleCI](https://flat.badgen.net/circleci/project/idleberg/gulp-webvsc)](https://circleci.com/gh/idleberg/gulp-webvsc)
+[![David](https://flat.badgen.net/david/dep/idleberg/gulp-webvsc)](https://david-dm.org/idleberg/gulp-webvsc)
+[![David](https://flat.badgen.net/david/dev/idleberg/gulp-webvsc)](https://david-dm.org/idleberg/gulp-webvsc?type=dev)
 
 Gulp plugin to convert [Winamp AVS presets](https://www.wikiwand.com/en/Advanced_Visualization_Studio) into [Webvs](https://github.com/azeem/webvs) JSON.
 
