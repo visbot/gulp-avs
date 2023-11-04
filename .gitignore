@@ -1,8 +1,17 @@
 # Package Managers
+*npm-debug.log*
 bower_components/
 node_modules/
-npm-debug.log
+package-lock.json
 vendor/
+yarn-error.log
+yarn.lock
+
+# Development
+.eslintcache
+
+# Build
+dist/
 
 # Project specific
 *.webvs

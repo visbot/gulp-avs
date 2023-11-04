@@ -1,5 +1,0 @@
-.circleci
-.editorconfig
-.travis.yml
-gulpfile.js
-test/
