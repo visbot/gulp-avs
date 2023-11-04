@@ -1,10 +1,8 @@
 # gulp-webvsc
 
-[![npm](https://flat.badgen.net/npm/license/gulp-webvsc)](https://www.npmjs.org/package/gulp-webvsc)
-[![npm](https://flat.badgen.net/npm/v/gulp-webvsc)](https://www.npmjs.org/package/gulp-webvsc)
-[![CircleCI](https://flat.badgen.net/circleci/project/idleberg/gulp-webvsc)](https://circleci.com/gh/idleberg/gulp-webvsc)
-[![David](https://flat.badgen.net/david/dep/idleberg/gulp-webvsc)](https://david-dm.org/idleberg/gulp-webvsc)
-[![David](https://flat.badgen.net/david/dev/idleberg/gulp-webvsc)](https://david-dm.org/idleberg/gulp-webvsc?type=dev)
+[![License](https://img.shields.io/npm/l/gulp-webvsc?style=for-the-badge)](https://github.com/idleberg/gulp-webvsc/blob/main/LICENSE)
+[![Version](https://img.shields.io/github/v/release/idleberg/gulp-webvsc?style=for-the-badge)](https://github.com/idleberg/gulp-webvsc/releases)
+[![Build](https://img.shields.io/github/actions/workflow/status/idleberg/gulp-webvsc/default.yml?style=for-the-badge)](https://github.com/idleberg/gulp-webvsc/actions)
 
 Gulp plugin to convert [Winamp AVS presets](https://www.wikiwand.com/en/Advanced_Visualization_Studio) into [Webvs](https://github.com/azeem/webvs) JSON.
 
@@ -105,7 +103,3 @@ Control the amount of output displayed:
 ## License
 
 This work is licensed under [The MIT License](https://opensource.org/licenses/MIT)
-
-## Donate
-
-You are welcome support this project using [Flattr](https://flattr.com/submit/auto?user_id=idleberg&url=https://github.com/idleberg/gulp-webvsc) or Bitcoin `17CXJuPsmhuTzFV2k4RKYwpEHVjskJktRd`
