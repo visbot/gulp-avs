@@ -1,5 +1,4 @@
-// @ts-ignore
-import { convertFile } from '@visbot/webvsc';
+import { convertPreset } from '@visbot/webvsc';
 import { name as packageName } from '../package.json';
 import { Transform, type TransformCallback } from 'node:stream';
 import PluginError from 'plugin-error';
@@ -46,9 +45,11 @@ export function webvsc(userOptions: WebvscOptions): Transform {
 			};
 
 			const errorList: string[] = [];
-
 			try {
-				convertFile(file.contents, file.basename, file.stat?.mtime || new Date(), options)
+				const webvsObject = convertPreset(file.contents as Buffer, file.stem, file.stat?.mtime || new Date(), options);
+				const webvsString = JSON.stringify(webvsObject);
+
+				file.contents = Buffer.from(webvsString, 'utf-8');
 			} catch (error) {
 				this.emit('error', new PluginError(packageName, error as Error, {
 					fileName: file.path
