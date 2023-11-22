@@ -30,9 +30,7 @@
   ],
   "dependencies": {
     "@visbot/webvsc": "3.0.0-alpha.4",
-    "plugin-error": "^2.0.1",
-    "replace-ext": "^1.0.0",
-    "through2": "^2.0.3"
+    "plugin-error": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "^18.18.8",
