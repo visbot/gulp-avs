@@ -1,7 +1,7 @@
 {
   "ignore": [
 		".husky/*",
-		"tests/*",
+		"test/*",
 		"tsup.config.ts"
 	],
   "ignoreBinaries": [
