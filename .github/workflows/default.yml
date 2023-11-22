@@ -5,7 +5,7 @@ on:
     paths:
     - '.github/workflows/**'
     - 'src/**'
-    - 'tests/**'
+    - 'test/**'
     - 'package.json'
     - 'pnpm-lock.yaml'
   workflow_dispatch:
