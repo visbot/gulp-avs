@@ -29,25 +29,26 @@
     "winamp"
   ],
   "dependencies": {
-    "@visbot/webvsc": "3.0.0-alpha",
+    "@visbot/webvsc": "3.0.0-alpha.4",
     "plugin-error": "^2.0.1",
     "replace-ext": "^1.0.0",
     "through2": "^2.0.3"
   },
   "devDependencies": {
     "@types/node": "^18.18.8",
-    "@types/vinyl": "^2.0.9",
-    "@typescript-eslint/eslint-plugin": "^6.9.1",
-    "@typescript-eslint/parser": "^6.9.1",
-    "eslint": "^8.53.0",
+    "@types/vinyl": "^2.0.11",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.54.0",
     "eslint-plugin-json": "^3.1.0",
     "gulp": "^4.0.2",
     "husky": "^8.0.3",
-    "knip": "^2.39.0",
-    "lint-staged": "^15.0.2",
+    "knip": "^2.41.5",
+    "lint-staged": "^15.1.0",
     "npm-run-all2": "^6.1.1",
+    "stream-assert": "^2.0.3",
     "tsup": "^7.2.0",
-    "typescript": "^5.2.2",
+    "typescript": "^5.3.2",
     "uvu": "^0.5.6"
   },
   "scripts": {
