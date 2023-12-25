@@ -24,7 +24,7 @@ Standard usage
 
 ```js
 import gulp from 'gulp';
-import { avs } from 'gulp-avs';
+import { avs } from '@visbot/gulp-avs';
 
 gulp.task('convert', done => {
 	gulp.src('input/**/*.avs')
