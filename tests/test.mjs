@@ -1,24 +1,21 @@
-const meta = require('../package.json');
-const webvsc = require('../');
 
-const assert = require('stream-assert');
-const File = require('vinyl');
-const gulp = require('gulp');
-const path = require('path');
-const should = require('should');
-const { readFileSync } = require('fs');
+import { webvsc } from '../dist/index.js';
+import assert from 'stream-assert';
+import gulp from 'gulp';
+import path from 'node:path';
+import { readFileSync } from 'node:fs';
 
-require('mocha');
+import 'mocha'
 
-const fixtures = (glob) => { return path.join(__dirname, 'fixtures', glob); }
-const expected = (glob) => { return path.join(__dirname, 'expected', glob); }
+const fixtures = (glob) => { return path.join(process.cwd(), 'tests/fixtures', glob); }
+const expected = (glob) => { return path.join(process.cwd(), 'tests/expected', glob); }
 
 const options = {
   minify: true,
   noDate: true
 };
 
-describe(meta.name, () => {
+describe('gulp-webvsc', () => {
   describe('webvsc()', () => {
     it('should emit error on streamed file', done => {
       gulp.src(fixtures('*'), { buffer: false })
