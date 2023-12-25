@@ -23,6 +23,7 @@ $ npm install --save-dev @visbot/gulp-avs
 Standard usage
 
 ```js
+// Gulpfile.mjs
 import gulp from 'gulp';
 import { avs } from '@visbot/gulp-avs';
 
@@ -34,6 +35,8 @@ gulp.task('convert', done => {
 	done();
 });
 ```
+
+:warning: This plugin is now pure ESM. [Read how to migrate your `Gulpfile`](https://gist.github.com/noraj/007a943dc781dc8dd3198a29205bae04).
 
 ## Options
 
