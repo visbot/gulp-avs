@@ -1,14 +1,13 @@
-
+import 'should';
+import 'mocha';
+import { join } from 'node:path';
+import { readFileSync } from 'node:fs';
 import { webvsc } from '../dist/index.js';
 import assert from 'stream-assert';
 import gulp from 'gulp';
-import path from 'node:path';
-import { readFileSync } from 'node:fs';
 
-import 'mocha'
-
-const fixtures = (glob) => { return path.join(process.cwd(), 'tests/fixtures', glob); }
-const expected = (glob) => { return path.join(process.cwd(), 'tests/expected', glob); }
+const fixtures = glob => join(process.cwd(), 'tests/fixtures', glob);
+const expected = glob => join(process.cwd(), 'tests/expected', glob);
 
 const options = {
   minify: true,

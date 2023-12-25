@@ -45,6 +45,7 @@
     "lint-staged": "^15.2.0",
     "mocha": "^10.2.0",
     "npm-run-all2": "^6.1.1",
+    "should": "^13.2.3",
     "stream-assert": "^2.0.3",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",

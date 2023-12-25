@@ -8,6 +8,7 @@ import type Vinyl from 'vinyl';
 type WebvscOptions = {
 	hidden?: boolean,
 	minify?: boolean,
+	noDate?: boolean;
 	verbose?: number
 };
 
@@ -46,7 +47,7 @@ export function webvsc(userOptions: WebvscOptions): Transform {
 
 			const errorList: string[] = [];
 			try {
-				const webvsObject = convertPreset(file.contents as Buffer, file.stem, file.stat?.mtime || new Date(), options);
+				const webvsObject = convertPreset(file.contents as Buffer, file.stem, options.noDate ? undefined : file.stat?.mtime, options);
 				const webvsString = JSON.stringify(webvsObject);
 
 				file.contents = Buffer.from(webvsString, 'utf-8');
