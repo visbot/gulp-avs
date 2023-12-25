@@ -15,5 +15,5 @@ dist/
 
 # Project specific
 *.webvs
-!test/**/*.webvs
+!tests/**/*.webvs
 todo.md
