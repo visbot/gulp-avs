@@ -27,11 +27,11 @@ import gulp from 'gulp';
 import webvsc from 'gulp-webvsc';
 
 gulp.task('convert', done => {
-  gulp.src('input/**/*.avs')
-    .pipe(webvsc())
-    .pipe(gulp.dest('output'));
+	gulp.src('input/**/*.avs')
+		.pipe(webvsc())
+		.pipe(gulp.dest('output'));
 
-  done();
+	done();
 });
 ```
 
