@@ -72,7 +72,7 @@ function avs(userOptions: WebvscOptions): Transform {
 }
 
 const webvsc = (userOptions: WebvscOptions): Transform => {
-	console.warn('webvsc() is deprecated and will be removed in a future release. Use avs() instead.');
+	console.warn('webvsc() is deprecated and will be removed in the next major release. Use avs() instead.');
 
 	return avs(userOptions);
 };
