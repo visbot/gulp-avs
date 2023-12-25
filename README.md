@@ -51,6 +51,13 @@ Default: `false`
 
 Minify generated JSON
 
+### noDate
+
+Type: `boolean`  
+Default: `false`  
+
+Does not add `date` property to generated JSON
+
 ### verbose
 
 Type: `number`  
