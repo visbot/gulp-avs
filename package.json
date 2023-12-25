@@ -1,6 +1,6 @@
 {
   "name": "@visbot/gulp-avs",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Gulp plugin to convert Winamp AVS presets into Webvs JSON",
   "author": "Jan T. Sott",
   "license": "MIT",
