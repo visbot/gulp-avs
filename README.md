@@ -1,6 +1,6 @@
 # @visbot/gulp-avs
 
-[![License](https://img.shields.io/github/license/visbot/gulp-avs?color=blue&style=for-the-badge)](https://github.com/visbot/gulp-avs/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/visbot/gulp-avs?style=for-the-badge)](https://github.com/visbot/gulp-avs/blob/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@visbot/gulp-avs?style=for-the-badge)](https://www.npmjs.org/package/@visbot/gulp-avs)
 [![Build](https://img.shields.io/github/actions/workflow/status/visbot/gulp-avs/tests.yml?style=for-the-badge)](https://github.com/visbot/gulp-avs/actions)
 
