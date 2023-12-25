@@ -1,4 +1,4 @@
-# gulp-avs
+# @visbot/gulp-avs
 
 [![License](https://img.shields.io/github/license/visbot/gulp-avs?color=blue&style=for-the-badge)](https://github.com/visbot/gulp-avs/blob/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@visbot/gulp-avs?style=for-the-badge)](https://www.npmjs.org/package/@visbot/gulp-avs)
@@ -14,7 +14,7 @@ $ npm install --save-dev @visbot/gulp-avs
 
 ## Usage
 
-`avs([options])`
+`avs(options)`
 
 The output file-extension will automatically be set to `.webvs`, so there's no need to pipe in additional plugins.
 
@@ -24,11 +24,11 @@ Standard usage
 
 ```js
 import gulp from 'gulp';
-import { webvsc } from 'gulp-avs';
+import { avs } from 'gulp-avs';
 
 gulp.task('convert', done => {
 	gulp.src('input/**/*.avs')
-		.pipe(webvsc())
+		.pipe(avs())
 		.pipe(gulp.dest('output'));
 
 	done();
@@ -73,7 +73,6 @@ Control the amount of output displayed:
 
 * [webvsc](https://github.com/grandchild/AVS-File-Decoder)
 * [webvsc-cli](https://github.com/idleberg/webvsc-cli)
-* [grunt-webvsc](https://github.com/idleberg/grunt-webvsc)
 
 ## License
 
