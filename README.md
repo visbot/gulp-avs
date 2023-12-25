@@ -24,7 +24,7 @@ Standard usage
 
 ```js
 import gulp from 'gulp';
-import webvsc from 'gulp-webvsc';
+import { webvsc } from 'gulp-webvsc';
 
 gulp.task('convert', done => {
 	gulp.src('input/**/*.avs')
