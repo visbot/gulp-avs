@@ -12,7 +12,7 @@ type WebvscOptions = {
 	verbose?: number
 };
 
-export function webvsc(userOptions: WebvscOptions): Transform {
+function avs(userOptions: WebvscOptions): Transform {
 	return new Transform({
 		objectMode: true,
 
@@ -69,4 +69,15 @@ export function webvsc(userOptions: WebvscOptions): Transform {
 			callback(null, file);
 		}
 	});
+}
+
+const webvsc = (userOptions: WebvscOptions): Transform => {
+	console.warn('webvsc() is deprecated and will be removed in a future release. Use avs() instead.');
+
+	return avs(userOptions);
+};
+
+export {
+	avs,
+	webvsc
 }

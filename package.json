@@ -1,5 +1,5 @@
 {
-  "name": "gulp-webvsc",
+  "name": "gulp-avs",
   "version": "0.5.0",
   "description": "Gulp plugin to convert Winamp AVS presets into Webvs JSON",
   "author": "Jan T. Sott",
@@ -9,7 +9,7 @@
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/idleberg/gulp-webvsc.git"
+    "url": "https://github.com/visbot/gulp-avs.git"
   },
   "files": [
     "dist/",

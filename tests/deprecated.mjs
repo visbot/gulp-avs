@@ -2,7 +2,7 @@ import 'should';
 import 'mocha';
 import { join } from 'node:path';
 import { readFileSync } from 'node:fs';
-import { avs } from '../dist/index.js';
+import { webvsc } from '../dist/index.js';
 import assert from 'stream-assert';
 import gulp from 'gulp';
 
@@ -15,10 +15,10 @@ const options = {
 };
 
 describe('gulp-avs', () => {
-	describe('avs()', () => {
+	describe('webvsc()', () => {
 		it('should emit error on streamed file', done => {
 			gulp.src(fixtures('*'), { buffer: false })
-				.pipe(avs())
+				.pipe(webvsc())
 				.once('error', err => {
 					err.message.should.eql('Streaming not supported');
 					done();
@@ -30,7 +30,7 @@ describe('gulp-avs', () => {
 			let webvsPreset = readFileSync(expected(`${file}.webvs`), 'utf-8');
 
 			gulp.src(fixtures(`${file}.avs`))
-				.pipe(avs(options))
+				.pipe(webvsc(options))
 				.pipe(assert.length(1))
 				.pipe(assert.first( d => { d.contents.toString().should.eql(webvsPreset); }))
 				.pipe(assert.end(done));
@@ -41,7 +41,7 @@ describe('gulp-avs', () => {
 			let webvsPreset = readFileSync(expected(`${file}.webvs`), 'utf-8');
 
 			gulp.src(fixtures(`${file}.avs`))
-				.pipe(avs(options))
+				.pipe(webvsc(options))
 				.pipe(assert.length(1))
 				.pipe(assert.first( d => { d.contents.toString().should.eql(webvsPreset); }))
 				.pipe(assert.end(done));
@@ -52,7 +52,7 @@ describe('gulp-avs', () => {
 			let webvsPreset = readFileSync(expected(`${file}.webvs`), 'utf-8');
 
 			gulp.src(fixtures(`${file}.avs`))
-				.pipe(avs(options))
+				.pipe(webvsc(options))
 				.pipe(assert.length(1))
 				.pipe(assert.first( d => { d.contents.toString().should.eql(webvsPreset); }))
 				.pipe(assert.end(done));
@@ -63,7 +63,7 @@ describe('gulp-avs', () => {
 			let webvsPreset = readFileSync(expected(`${file}.webvs`), 'utf-8');
 
 			gulp.src(fixtures(`${file}.avs`))
-				.pipe(avs(options))
+				.pipe(webvsc(options))
 				.pipe(assert.length(1))
 				.pipe(assert.first( d => { d.contents.toString().should.eql(webvsPreset); }))
 				.pipe(assert.end(done));

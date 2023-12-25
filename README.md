@@ -1,20 +1,20 @@
-# gulp-webvsc
+# gulp-avs
 
-[![License](https://img.shields.io/npm/l/gulp-webvsc?style=for-the-badge)](https://github.com/idleberg/gulp-webvsc/blob/main/LICENSE)
-[![Version](https://img.shields.io/github/v/release/idleberg/gulp-webvsc?style=for-the-badge)](https://github.com/idleberg/gulp-webvsc/releases)
-[![Build](https://img.shields.io/github/actions/workflow/status/idleberg/gulp-webvsc/default.yml?style=for-the-badge)](https://github.com/idleberg/gulp-webvsc/actions)
+[![License](https://img.shields.io/github/license/visbot/gulp-avs?color=blue&style=for-the-badge)](https://github.com/visbot/gulp-avs/blob/main/LICENSE)
+[![Version](https://img.shields.io/npm/v/@visbot/gulp-avs?style=for-the-badge)](https://www.npmjs.org/package/@visbot/gulp-avs)
+[![Build](https://img.shields.io/github/actions/workflow/status/visbot/gulp-avs/tests.yml?style=for-the-badge)](https://github.com/visbot/gulp-avs/actions)
 
 Gulp plugin to convert [Winamp AVS presets](https://www.wikiwand.com/en/Advanced_Visualization_Studio) into [Webvs](https://github.com/azeem/webvs) JSON.
 
 ## Installation
 
 ```sh
-$ npm install --save-dev gulp-webvsc
+$ npm install --save-dev @visbot/gulp-avs
 ```
 
 ## Usage
 
-`webvsc([options])`
+`avs([options])`
 
 The output file-extension will automatically be set to `.webvs`, so there's no need to pipe in additional plugins.
 
@@ -24,7 +24,7 @@ Standard usage
 
 ```js
 import gulp from 'gulp';
-import { webvsc } from 'gulp-webvsc';
+import { webvsc } from 'gulp-avs';
 
 gulp.task('convert', done => {
 	gulp.src('input/**/*.avs')
