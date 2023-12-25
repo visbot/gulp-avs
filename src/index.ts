@@ -47,7 +47,7 @@ export function webvsc(userOptions: WebvscOptions): Transform {
 
 			const errorList: string[] = [];
 			try {
-				const webvsObject = convertPreset(file.contents as Buffer, file.stem, options.noDate ? undefined : file.stat?.mtime, options);
+				const webvsObject = convertPreset(file.contents as Buffer, file.stem, file.stat?.mtime, options);
 				const webvsString = JSON.stringify(webvsObject);
 
 				file.contents = Buffer.from(webvsString, 'utf-8');
@@ -68,5 +68,5 @@ export function webvsc(userOptions: WebvscOptions): Transform {
 
 			callback(null, file);
 		}
-    });
+	});
 }

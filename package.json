@@ -29,7 +29,7 @@
     "winamp"
   ],
   "dependencies": {
-    "@visbot/webvsc": "3.0.0-alpha.4",
+    "@visbot/webvsc": "3.0.0-alpha.5",
     "plugin-error": "^2.0.1"
   },
   "devDependencies": {
