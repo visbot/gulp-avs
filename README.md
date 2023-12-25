@@ -16,7 +16,7 @@ $ npm install --save-dev @visbot/gulp-avs
 
 `avs(options)`
 
-The output file-extension will automatically be set to `.webvs`, so there's no need to pipe in additional plugins.
+:warning: The output file-extension will automatically be set to `.webvs`, so there's no need for additional plugins.
 
 **Example:**
 
