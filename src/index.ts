@@ -12,7 +12,7 @@ type WebvscOptions = {
 	verbose?: number
 };
 
-function avs(userOptions: WebvscOptions): Transform {
+export function avs(userOptions: WebvscOptions): Transform {
 	return new Transform({
 		objectMode: true,
 
@@ -46,6 +46,7 @@ function avs(userOptions: WebvscOptions): Transform {
 			};
 
 			const errorList: string[] = [];
+
 			try {
 				const webvsObject = convertPreset(file.contents as Buffer, file.stem, file.stat?.mtime, options);
 				const webvsString = JSON.stringify(webvsObject);
@@ -71,13 +72,5 @@ function avs(userOptions: WebvscOptions): Transform {
 	});
 }
 
-const webvsc = (userOptions: WebvscOptions): Transform => {
-	console.warn('webvsc() is deprecated and will be removed in the next major release. Use avs() instead.');
-
-	return avs(userOptions);
-};
-
-export {
-	avs,
-	webvsc
-}
+// Alias for backwards compatibility
+export const webvsc = (userOptions: WebvscOptions): Transform => avs(userOptions);
