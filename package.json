@@ -33,28 +33,28 @@
     "plugin-error": "^2.0.1"
   },
   "devDependencies": {
-		"@types/node": "^18.18.8",
+    "@types/node": "^18.18.8",
     "@types/vinyl": "^2.0.11",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-		"@visbot/webvsc": "3.0.0-alpha.5",
-    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "@visbot/webvsc": "3.0.0-alpha.5",
+    "eslint": "^8.57.0",
     "eslint-plugin-json": "^3.1.0",
     "gulp": "^4.0.2",
-    "husky": "^8.0.3",
+    "husky": "^9.0.11",
     "knip": "^3.8.4",
-    "lint-staged": "^15.2.0",
-    "mocha": "^10.2.0",
-    "npm-run-all2": "^6.1.1",
+    "lint-staged": "^15.2.2",
+    "mocha": "^10.3.0",
+    "npm-run-all2": "^6.1.2",
     "should": "^13.2.3",
     "stream-assert": "^2.0.3",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.3",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.3",
     "vinyl": "^3.0.0"
   },
-	"peerDependencies": {
-		"@visbot/webvsc": "3.0.0-alpha.5"
-	},
+  "peerDependencies": {
+    "@visbot/webvsc": "3.0.0-alpha.5"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "npm run build -- --watch",
